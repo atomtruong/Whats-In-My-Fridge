@@ -113,5 +113,5 @@ We suggest exploring the guide of our app content below:
 ## Our Team
 [@Nechanie](https://github.com/nechanie),
 [@METrimble](https://github.com/METrimble),
-[@truongad](https://github.com/truongad),
+[@AtomTruong](https://github.com/atomtruong),
 [@Richeyi](https://github.com/Richeyi)
