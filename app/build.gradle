@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp' version '1.7.21-1.0.8'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    namespace 'com.example.myfridge'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.myfridge"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "SPOONACULAR_API_KEY", SPOONACULAR_API_KEY)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation 'com.takisoft.preferencex:preferencex:1.1.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.0'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.room:room-runtime:2.5.0'
+    implementation 'androidx.room:room-ktx:2.5.0'
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation 'com.google.devtools.ksp:symbol-processing-api:1.7.21-1.0.8'
+    implementation 'androidx.annotation:annotation:1.6.0'
+
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.moshi:moshi:1.14.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+
+    implementation 'androidx.room:room-common:2.5.0'
+
+
+    ksp 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
+    ksp 'androidx.room:room-compiler:2.5.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "com.github.skydoves:elasticviews:2.1.0"
+    implementation "com.github.skydoves:transformationlayout:1.1.2"
+    implementation "com.daimajia.swipelayout:library:1.2.0@aar"
+    implementation 'com.daimajia.easing:library:1.0.0@aar'
+    implementation 'com.daimajia.androidanimations:library:1.1.2@aar'
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation "com.mikepenz:materialdrawer:9.0.1"
+    implementation "com.mikepenz:materialdrawer-nav:9.0.1"
+    implementation "com.mikepenz:materialdrawer-iconics:9.0.1"
+    implementation 'io.github.prathameshmm02.themeEngine:themeEngine:1.0'
+    implementation  'com.github.Kennyc1012:MultiStateView:2.2.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01"
+    implementation "com.mikepenz:iconics-core:5.4.0"
+
+
+    implementation 'com.mikepenz:google-material-typeface:4.0.0.2-kotlin@aar'
+    implementation 'com.mikepenz:material-design-iconic-typeface:2.2.0.8-kotlin@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:5.9.0.2-kotlin@aar'
+    implementation 'com.mikepenz:octicons-typeface:11.1.0.0-kotlin@aar'
+    implementation 'com.mikepenz:meteocons-typeface:1.1.0.7-kotlin@aar'
+    implementation 'com.mikepenz:community-material-typeface:7.0.96.0-kotlin@aar' // note 5.3.45.1 and newer alphabetically sorts, and merges in 3 sections
+    implementation 'com.mikepenz:weather-icons-typeface:2.0.10.7-kotlin@aar'
+    implementation 'com.mikepenz:typeicons-typeface:2.0.7.7-kotlin@aar'
+    implementation 'com.mikepenz:entypo-typeface:1.0.0.7-kotlin@aar'
+    implementation 'com.mikepenz:devicon-typeface:2.0.0.7-kotlin@aar'
+    implementation 'com.mikepenz:foundation-icons-typeface:3.0.0.7-kotlin@aar'
+    implementation 'com.mikepenz:ionicons-typeface:2.0.1.7-kotlin@aar'
+    implementation 'com.mikepenz:pixeden-7-stroke-typeface:1.2.0.5-kotlin@aar'
+    implementation 'com.mikepenz:material-design-icons-dx-typeface:5.0.1.2-kotlin@aar'
+    implementation 'com.mikepenz:phosphor-typeface:1.0.0.0-kotlin@aar'
+    implementation "com.mikepenz:iconics-views:5.4.0"
+    implementation "com.mikepenz:iconics-compose:5.4.0"
+
+}

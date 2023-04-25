@@ -1,0 +1,20 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.takisoft.preferencex.PreferenceCategory app:title="@string/general_header">
+        <com.takisoft.preferencex.EditTextPreference
+            app:key="@string/pref_expiration_key"
+            app:title="@string/pref_expiration_title"
+            app:dialogMessage="@string/pref_expiration_detailed"
+            app:useSimpleSummaryProvider="true"
+            android:inputType="number"
+            android:defaultValue="7"/>
+    </com.takisoft.preferencex.PreferenceCategory>
+
+    <com.takisoft.preferencex.PreferenceCategory app:title="@string/theme_header">
+        <Preference
+            app:title="Got To Theme Settings"
+            app:key="Color"/>
+    </com.takisoft.preferencex.PreferenceCategory>
+
+
+</PreferenceScreen>

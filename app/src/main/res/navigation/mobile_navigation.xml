@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myfridge.ui.fridge.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_rv" >
+        <action
+            android:id="@+id/action_nav_home_to_addFoodFragment"
+            app:destination="@id/addFoodFragment"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_nav_home_to_addShoppingFragment"
+            app:destination="@id/addToShoppingFragment"
+            app:launchSingleTop="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_recipes"
+        android:name="com.example.myfridge.ui.recipes.RecipesFragment"
+        android:label="@string/menu_recipes"
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_nav_recipes_to_recipesDetailedFragment"
+            app:destination="@id/recipesDetailedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_shopping"
+        android:name="com.example.myfridge.ui.shopping.ShoppingFragment"
+        android:label="@string/menu_shopping"
+        tools:layout="@layout/fragment_shopping" >
+        <argument
+            android:name="shoppingListName"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_nav_shoppingList_to_addShoppingListItemFragment"
+            app:destination="@id/addShoppingListItemFragment" />
+        <action
+            android:id="@+id/action_nav_shoppingList_to_addShoppingListFragment"
+            app:destination="@+id/addShoppingListFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_expiring"
+        android:name="com.example.myfridge.ui.fridge.ExpiringFragment"
+        android:label="@string/menu_expiring"/>
+    <fragment
+        android:id="@+id/recipesDetailedFragment"
+        android:name="com.example.myfridge.ui.recipes.RecipesDetailedFragment"
+        android:label="RecipesDetailedFragment">
+        <argument
+            android:name="recipe"
+            app:argType="com.example.myfridge.data.recipes.RecipeItem"/>
+        <argument android:name="position"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.myfridge.ui.fridge.AddFoodFragment"
+        android:label="AddFoodFragment" />
+    <fragment
+        android:id="@+id/addToShoppingFragment"
+        android:name="com.example.myfridge.ui.fridge.AddToShoppingFragment"
+        android:label="AddToShoppingFragment">
+        <argument
+            android:name="ingredient"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.myfridge.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_nav_settings_to_themeSettings"
+            app:destination="@id/themeSettings" />
+    </fragment>
+    <action android:id="@+id/action_global_nav_home" app:destination="@id/nav_home"/>
+    <fragment
+        android:id="@+id/themeSettings"
+        android:name="com.example.myfridge.ui.settings.ThemeSettings"
+        android:label="ThemeSettings" >
+        <action
+            android:id="@+id/action_themeSettings_self"
+            app:destination="@id/themeSettings"
+            app:popUpTo="@id/nav_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShoppingListItemFragment"
+        android:name="com.example.myfridge.ui.shopping.AddShoppingListItemFragment"
+        android:label="AddShoppingListItemFragment" />
+    <fragment
+        android:id="@+id/addShoppingListFragment"
+        android:name="com.example.myfridge.ui.shopping.AddShoppingListFragment"
+        android:label="AddShoppingListFragment"/>
+    <action android:id="@+id/action_global_nav_shopping" app:destination="@id/nav_shopping"/>
+    <action android:id="@+id/action_global_addShoppingListFragment" app:destination="@id/addShoppingListFragment" />
+
+
+
+</navigation>
